@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<h1 style="color: #85ccea; text-align: center; margin-bottom: 20px;">Sign Up</h1>
+<form method="POST" style="background: #fafafa; padding: 20px; margin: 20px auto; max-width: 400px; border-radius: 8px;">
+    {% csrf_token %}
+    <div style="margin-bottom: 15px;">
+        {{ form.username.label_tag }}
+        {{ form.username }}
+    </div>
+    <div style="margin-bottom: 15px;">
+        {{ form.email.label_tag }}
+        {{ form.email}} 
+    </div>
+    
+    <div style="margin-bottom: 15px;">
+        {{ form.password1.label_tag }}
+        {{ form.password1 }}
+    </div>
+    <div style="margin-bottom: 15px;">
+        {{ form.password2.label_tag }}
+        {{ form.password2 }}
+    </div>
+    <button type="submit" style="background-color: #85ccea; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; display: block; margin: 20px auto;">Sign Up</button>
+</form>
+{% endblock %}
